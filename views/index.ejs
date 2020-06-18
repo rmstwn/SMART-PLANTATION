@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="refresh" content="1">
+  <meta charset="UTF-8">
+  <title>SMART PLANTATION</title>
+  <!-- <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2
+    }
+  </style> -->
+  <style>
+    table {
+      width: 750px;
+      border-collapse: collapse;
+      margin: 50px auto;
+    }
+
+    /* Zebra striping */
+    tr:nth-of-type(odd) {
+      background: #eee;
+    }
+
+    th {
+      background: #3498db;
+      color: white;
+      font-weight: bold;
+    }
+
+    td {
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    th {
+      padding: 10px;
+      border: 1px solid #ccc;
+      text-align: left;
+      font-size: 18px;
+    }
+
+    h1 {
+      color: #efecec;
+      text-transform: uppercase;
+      font-size: 40px;
+      line-height: 50px;
+      font-weight: 400;
+      margin-top: 20px;
+    }
+
+    /* 
+  Max width before this PARTICULAR table gets nasty
+  This query will take effect for any screen smaller than 760px
+  and also iPads specifically.
+  */
+    @media only screen and (max-width: 760px),
+    (min-device-width: 768px) and (max-device-width: 1024px) {
+
+      table {
+        width: 100%;
+      }
+
+      /* Force table to not be like tables anymore */
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      /* Hide table headers (but not display: none;, for accessibility) */
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+
+      tr {
+
+        border: 1px solid #ccc;
+      }
+
+      td {
+        /* Behave  like a "row" */
+        background: #3498db;
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+      }
+
+      td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+
+        color: #000;
+        font-weight: bold;
+      }
+    }
+
+    body {
+      /* Location of the image */
+      background-image: url(https://wallpaperplay.com/walls/full/4/2/6/210194.jpg);
+
+      /* Image is centered vertically and horizontally at all times */
+      background-position: center center;
+
+      /* Image doesn't repeat */
+      background-repeat: no-repeat;
+
+      /* Makes the image fixed in the viewport so that it doesn't move when 
+     the content height is greater than the image height */
+      background-attachment: fixed;
+
+      /* This is what makes the background image rescale based on its container's size */
+      background-size: cover;
+
+      /* Pick a solid background color that will be displayed while the background image is loading */
+      background-color: #464646;
+
+      /* SHORTHAND CSS NOTATION
+   * background: url(background-photo.jpg) center center cover no-repeat fixed;
+   */
+    }
+
+    /* For mobile devices */
+    @media only screen and (max-width: 767px) {
+      body {
+        /* The file size of this background image is 93% smaller
+     * to improve page load speed on mobile internet connections */
+        background-image: url(https://wallpaperplay.com/walls/full/4/2/6/210194.jpg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">SMART PLANTATION</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Tree</th>
+        <th>Soil Moisture</th>
+        <th>PH</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ul class="sensor">
+        <% for(var i=0; i<sensor.length; i++) {%>
+        <tr>
+          <td data-column="Tree"><%= sensor[i]._id %></td>
+          <td data-column="Soil Moisture"><%= sensor[i].soil %></td>
+          <td data-column="PH"><%= sensor[i].ph %></td>
+        </tr>
+        <% } %>
+      </ul>
+
+    </tbody>
+  </table>
+</body>
+
+</html>

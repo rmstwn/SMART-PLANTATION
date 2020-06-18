@@ -1,0 +1,21 @@
+{
+  "name": "smart_plantation",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon smart_plantation.js"
+  },
+  "author": "rama",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
+    "express": "^4.17.1",
+    "mongodb": "^3.3.4",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  },
+  "description": ""
+}
